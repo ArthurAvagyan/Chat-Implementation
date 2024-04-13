@@ -29,7 +29,9 @@ final class ConfigurationViewController: Controller<ConfigurationViewModel, Conf
 		contentView.onProceedButtonAction
 			.receive(on: DispatchQueue.main)
 			.sink { [unowned self] _ in
-				
+				let viewModel = ChatViewModel(configuration: viewModel.configuration)
+				let viewController = ChatViewController(viewModel: viewModel)
+				navigationController?.pushViewController(viewController, animated: true)
 			}
 			.store(in: &cancellables)
 	}

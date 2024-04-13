@@ -14,9 +14,16 @@ final class ConfigurationViewModel: ViewModel {
 	@Published var cornerRadius: CGFloat
 	@Published var textSize: CGFloat
 	
+	var configuration: ConfigurationModel {
+		ConfigurationModel(backgroundColor: backgroundColor,
+						   cornerRadius: cornerRadius,
+						   textSize: textSize)
+	}
+	
 	init(configuration: Constants.ChatConfiguration = .default) {
 		self.backgroundColor = configuration.backgroundColor
 		self.cornerRadius = configuration.cornerRadius
 		self.textSize = configuration.textSize
 	}
+	
 }

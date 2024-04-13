@@ -9,11 +9,18 @@ import UIKit
 
 struct Constants {
 	
+//	struct Color {
+//		
+//		static let
+//	}
+	
 	struct Size {
 		static var cornerRadius: CGFloat = 8
 		static var paddingHorizontal: CGFloat = 16
 		static var paddingVertical: CGFloat = 32
-		static var buttonHeight: CGFloat = 44
+		static var buttonDimention: CGFloat = 52
+		static var textInputHeight: CGFloat = 36
+		static let dateLabelBottomSpacing: CGFloat = 8
 	}
 	
 	struct ChatConfiguration {

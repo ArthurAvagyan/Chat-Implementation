@@ -75,7 +75,7 @@ final class ConfigurationView: View<ConfigurationViewModel> {
 			backgroundColorButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Size.paddingHorizontal),
 			backgroundColorButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Constants.Size.paddingVertical),
 			backgroundColorButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.Size.paddingHorizontal),
-			backgroundColorButton.heightAnchor.constraint(equalToConstant: Constants.Size.buttonHeight),
+			backgroundColorButton.heightAnchor.constraint(equalToConstant: Constants.Size.buttonDimention),
 			
 			textSizeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Size.paddingHorizontal),
 			textSizeLabel.topAnchor.constraint(equalTo: backgroundColorButton.bottomAnchor, constant: Constants.Size.paddingVertical),
@@ -96,7 +96,7 @@ final class ConfigurationView: View<ConfigurationViewModel> {
 			proceedButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Size.paddingHorizontal),
 			proceedButton.topAnchor.constraint(equalTo: cornerRadiusSlider.bottomAnchor, constant: Constants.Size.paddingVertical),
 			proceedButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.Size.paddingHorizontal),
-			proceedButton.heightAnchor.constraint(equalToConstant: Constants.Size.buttonHeight)
+			proceedButton.heightAnchor.constraint(equalToConstant: Constants.Size.buttonDimention)
 		])
 	}
 	
