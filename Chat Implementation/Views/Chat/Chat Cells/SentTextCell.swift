@@ -50,6 +50,4 @@ final class SentTextCell: UICollectionViewCell {
 		bubble.backgroundColor = configuration.backgroundColor.withAlphaComponent(0.4)
 		bubble.layer.cornerRadius = configuration.cornerRadius
 	}
-	
-	
 }

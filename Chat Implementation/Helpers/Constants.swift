@@ -9,11 +9,6 @@ import UIKit
 
 struct Constants {
 	
-//	struct Color {
-//		
-//		static let
-//	}
-	
 	struct Size {
 		static var cornerRadius: CGFloat = 8
 		static var paddingHorizontal: CGFloat = 16
