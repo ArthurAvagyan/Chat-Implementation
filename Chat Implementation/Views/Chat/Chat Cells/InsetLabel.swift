@@ -9,7 +9,7 @@ import UIKit
 
 class InsetLabel: UILabel {
 	
-	var insets: UIEdgeInsets = UIEdgeInsets.zero {
+	var insets: UIEdgeInsets = .zero {
 		didSet {
 			setNeedsDisplay()
 		}

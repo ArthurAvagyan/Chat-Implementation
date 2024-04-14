@@ -7,11 +7,37 @@
 
 import UIKit
 
-final class ChatViewController: Controller<ChatViewModel, ChatView> {
+final class ChatViewController: Controller<ChatViewModel, ChatView>, UINavigationControllerDelegate {
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		
+		
+	}
+	
+	func showImagePicker() {
+		let imagePicker = UIImagePickerController()
+		
+		imagePicker.delegate = self
+		imagePicker.sourceType = .savedPhotosAlbum
+		imagePicker.allowsEditing = false
+		
+		present(imagePicker, animated: true, completion: nil)
+	}
+}
+
+extension ChatViewController: UIImagePickerControllerDelegate {
+	
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		picker.dismiss(animated: true)
+		
+		guard let image = info[.originalImage] as? UIImage else {
+			print("No image found")
+			return
+		}
+		
+		viewModel.image = image
 	}
 }

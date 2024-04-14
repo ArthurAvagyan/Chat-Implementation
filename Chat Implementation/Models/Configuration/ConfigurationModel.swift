@@ -11,4 +11,5 @@ struct ConfigurationModel {
 	let backgroundColor: UIColor
 	let cornerRadius: CGFloat
 	let textSize: CGFloat
+	let loadMoreCount: Int = 20
 }

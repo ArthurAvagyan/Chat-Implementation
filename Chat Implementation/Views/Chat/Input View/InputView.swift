@@ -12,6 +12,7 @@ final class InputView: View<InputViewModel> {
 	private var separatorView: UIView!
 	private var attachmentButton: UIButton!
 	private var textView: UITextView!
+	private var placeholderLabel: UILabel!
 	private var sendButton: UIButton!
 	
 	init(viewModel: InputViewModel) {
@@ -39,14 +40,20 @@ final class InputView: View<InputViewModel> {
 		addSubview(attachmentButton)
 		
 		textView = UITextView()
+		textView.delegate = self
 		textView.backgroundColor = UIColor(resource: .grayBackground)
 		textView.layer.cornerRadius = Constants.Size.textInputHeight / 2
 		textView.layer.cornerCurve = .continuous
 		textView.layer.masksToBounds = true
-		textView.text = "Write a message..."
-		textView.textColor = UIColor(resource: .inputPlaceholder)
-		textView.font = .systemFont(ofSize: viewModel.configuration.textSize)
+		textView.textColor = .lightText
+		textView.font = .systemFont(ofSize: 16)
 		addSubview(textView)
+		
+		placeholderLabel = UILabel()
+		placeholderLabel.text = "Write a message..."
+		placeholderLabel.textColor = UIColor(resource: .inputPlaceholder)
+		placeholderLabel.font = .systemFont(ofSize: 16)
+		addSubview(placeholderLabel)
 		
 		sendButton = UIButton(configuration: .plain())
 		sendButton.configuration?.image = UIImage(resource: .send)
@@ -61,7 +68,7 @@ final class InputView: View<InputViewModel> {
 		attachmentButton.translatesAutoresizingMaskIntoConstraints = false
 		textView.translatesAutoresizingMaskIntoConstraints = false
 		sendButton.translatesAutoresizingMaskIntoConstraints = false
-		
+		placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			separatorView.heightAnchor.constraint(equalToConstant: 1),
 			separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -80,6 +87,9 @@ final class InputView: View<InputViewModel> {
 			textView.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor),
 			textView.centerYAnchor.constraint(equalTo: centerYAnchor),
 			
+			placeholderLabel.leadingAnchor.constraint(equalTo: textView.leadingAnchor, constant: 4),
+			placeholderLabel.centerYAnchor.constraint(equalTo: textView.centerYAnchor),
+			
 			sendButton.heightAnchor.constraint(equalToConstant: Constants.Size.buttonDimention),
 			sendButton.widthAnchor.constraint(equalToConstant: Constants.Size.buttonDimention),
 			sendButton.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -89,6 +99,22 @@ final class InputView: View<InputViewModel> {
 	}
 	
 	func setupBindings() {
-		
+		viewModel.$message
+			.receive(on: DispatchQueue.main)
+			.sink { [unowned self] newText in
+				if textView.text != newText {
+					textView.text = newText
+					textViewDidChange(textView)
+				}
+			}
+			.store(in: &cancellables)
+	}
+}
+
+extension InputView: UITextViewDelegate {
+	
+	func textViewDidChange(_ textView: UITextView) {
+		placeholderLabel.isHidden = !textView.text.isEmpty
+		viewModel.message = textView.text
 	}
 }
