@@ -50,6 +50,7 @@ final class SentImageTextCell: UICollectionViewCell {
 			imageView.trailingAnchor.constraint(equalTo: bubble.trailingAnchor, constant: -1),
 			imageView.bottomAnchor.constraint(equalTo: bubble.bottomAnchor, constant: -1),
 		])
+		
 	}
 	
 	required init?(coder: NSCoder) {
@@ -65,6 +66,7 @@ final class SentImageTextCell: UICollectionViewCell {
 	}
 	
 	func update(with textImageMessage: ChatSentImageTextMessage, configuration: ConfigurationModel) {
+		layer.transform = CATransform3DMakeScale(1, -1, 1)
 		messageLabel.text = textImageMessage.messaage
 		messageLabel.font = .systemFont(ofSize: configuration.textSize)
 				

@@ -22,6 +22,8 @@ final class ChatView: View<ChatViewModel> {
 		let flowLayout = UICollectionViewFlowLayout()
 	
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+		collectionView.layer.transform = CATransform3DMakeScale(1, -1, 1)
+
 		collectionView.delegate = self
 		collectionView.dataSource = self
 		collectionView.register(SentTextCell.self, forCellWithReuseIdentifier: .init(describing: SentTextCell.self))

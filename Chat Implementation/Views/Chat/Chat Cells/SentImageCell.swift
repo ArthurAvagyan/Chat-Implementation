@@ -54,7 +54,7 @@ final class SentImageCell: UICollectionViewCell {
 	}
 	
 	func update(with imageMessage: ChatSentImageMessage, configuration: ConfigurationModel) {
-
+		layer.transform = CATransform3DMakeScale(1, -1, 1)
 		if let cachedImage = ImageCache.shared.getImage(forKey: "\(imageMessage.image.imageUrl.path))_resized") {
 			imageView.image = cachedImage.resizeImage(targetSize: imageView.frame.size)
 		} else {

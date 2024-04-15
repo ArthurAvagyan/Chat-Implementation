@@ -76,6 +76,7 @@ final class ReceivedTextCell: UICollectionViewCell {
 	}
 	
 	func update(with textMessage: ChatReceivedTextMessage, configuration: ConfigurationModel) {
+		layer.transform = CATransform3DMakeScale(1, -1, 1)
 		messageLabel.text = textMessage.messaage
 		messageLabel.numberOfLines = 0
 		messageLabel.font = .systemFont(ofSize: configuration.textSize)

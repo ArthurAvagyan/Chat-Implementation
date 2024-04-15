@@ -89,6 +89,7 @@ final class ReceivedImageTextCell: UICollectionViewCell {
 	}
 	
 	func update(with imageTextMessage: ChatReceivedImageTextMessage, configuration: ConfigurationModel) {
+		layer.transform = CATransform3DMakeScale(1, -1, 1)
 		messageLabel.text = imageTextMessage.messaage
 		messageLabel.font = .systemFont(ofSize: configuration.textSize)
 		

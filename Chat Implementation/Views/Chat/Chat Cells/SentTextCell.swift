@@ -44,6 +44,7 @@ final class SentTextCell: UICollectionViewCell {
 	}
 	
 	func update(with textMessage: ChatSentTextMessage, configuration: ConfigurationModel) {
+		layer.transform = CATransform3DMakeScale(1, -1, 1)
 		messageLabel.text = textMessage.messaage
 		messageLabel.font = .systemFont(ofSize: configuration.textSize)
 		

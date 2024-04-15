@@ -27,7 +27,6 @@
 		56E833CB2BCAC84500C0259A /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E833CA2BCAC84500C0259A /* InputView.swift */; };
 		56E833CE2BCACBF100C0259A /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E833CD2BCACBF100C0259A /* InputViewModel.swift */; };
 		56E833D12BCAD87500C0259A /* ConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E833D02BCAD87500C0259A /* ConfigurationModel.swift */; };
-		56E833D52BCB08AE00C0259A /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E833D42BCB08AE00C0259A /* InsetLabel.swift */; };
 		56E833D72BCB0E5C00C0259A /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E833D62BCB0E5C00C0259A /* NSLayoutConstraint+Extensions.swift */; };
 		56E833E32BCBC8BB00C0259A /* SentTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E833E22BCBC8BB00C0259A /* SentTextCell.swift */; };
 		56E833E52BCBC98000C0259A /* SentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E833E42BCBC98000C0259A /* SentImageCell.swift */; };
@@ -66,7 +65,6 @@
 		56E833CA2BCAC84500C0259A /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		56E833CD2BCACBF100C0259A /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		56E833D02BCAD87500C0259A /* ConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationModel.swift; sourceTree = "<group>"; };
-		56E833D42BCB08AE00C0259A /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
 		56E833D62BCB0E5C00C0259A /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		56E833E22BCBC8BB00C0259A /* SentTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTextCell.swift; sourceTree = "<group>"; };
 		56E833E42BCBC98000C0259A /* SentImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentImageCell.swift; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 				56E833E82BCBCA7D00C0259A /* ReceivedTextCell.swift */,
 				56E833EA2BCBCC3300C0259A /* ReceivedImageCell.swift */,
 				56E833EC2BCBCD6000C0259A /* ReceivedImageTextCell.swift */,
-				56E833D42BCB08AE00C0259A /* InsetLabel.swift */,
 			);
 			path = "Chat Cells";
 			sourceTree = "<group>";
@@ -375,7 +372,6 @@
 				56E833FB2BCC8D5200C0259A /* ChatRepresentables.swift in Sources */,
 				56E8339E2BCA926600C0259A /* Controller.swift in Sources */,
 				56E833A12BCA92BB00C0259A /* ConfigurationView.swift in Sources */,
-				56E833D52BCB08AE00C0259A /* InsetLabel.swift in Sources */,
 				56E833962BCA8FD000C0259A /* Constants.swift in Sources */,
 				56E833EB2BCBCC3300C0259A /* ReceivedImageCell.swift in Sources */,
 				56E833E32BCBC8BB00C0259A /* SentTextCell.swift in Sources */,
@@ -554,7 +550,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.companyName.Chat-Implementation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -587,7 +582,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.companyName.Chat-Implementation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
