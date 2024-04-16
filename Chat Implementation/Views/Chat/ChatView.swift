@@ -196,7 +196,8 @@ extension ChatView: UICollectionViewDataSource {
 extension ChatView: UICollectionViewDelegate {
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.frame.size.height {
+		if scrollView.contentOffset.y > scrollView.contentSize.height - 1.5 * scrollView.frame.size.height {
+
 			viewModel.loadMore()
 		}
 	}
