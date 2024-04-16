@@ -191,6 +191,40 @@ extension ChatView: UICollectionViewDataSource {
 			fatalError("Unknown type, implement Message type")
 		}
 	}
+	
+	func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+		guard let indexPath = indexPaths.first else { return nil }
+		
+		return cellMenuConfiguration(at: indexPath)
+	}
+}
+
+extension ChatView {
+	
+	private func cellMenuConfiguration(at indexPath: IndexPath) -> UIContextMenuConfiguration? {
+		guard let model = viewModel.chatMessages[indexPath.item] as? ChatImageRepresentable else { return nil }
+		
+		return imageConfiguration(with: ImageCache.shared.getImage(forKey: model.image.imageUrl.path))
+	}
+	
+	private func imageConfiguration(with image: UIImage?) -> UIContextMenuConfiguration? {
+		guard let image else { return nil }
+		
+		return UIContextMenuConfiguration {
+			let viewController = UIViewController()
+			
+			let imageView = UIImageView(image: image)
+			imageView.contentMode = .scaleAspectFit
+			viewController.view = imageView
+			
+			imageView.frame = CGRect(x: 0, y: 0, width: imageView.image!.size.width, height: imageView.image!.size.height)
+			
+			viewController.preferredContentSize = imageView.frame.size
+			viewController.view.backgroundColor = .clear
+			
+			return viewController
+		}
+	}
 }
 
 extension ChatView: UICollectionViewDelegate {
