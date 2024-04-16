@@ -31,6 +31,8 @@ class ChatLayout: UICollectionViewLayout {
 	}
 	
 	override func prepare() {
+//		let cacheCount = cache.count
+//		guard let collectionView, cacheCount < collectionView.numberOfItems(inSection: 0) else {
 		guard cache.isEmpty,
 			  let collectionView else {
 			return
@@ -42,7 +44,8 @@ class ChatLayout: UICollectionViewLayout {
 		}
 		var column = 0
 		var yOffset: [CGFloat] = .init(repeating: 0, count: numberOfColumns)
-		
+
+//		for item in cacheCount..<collectionView.numberOfItems(inSection: 0) {
 		for item in 0..<collectionView.numberOfItems(inSection: 0) {
 			let indexPath = IndexPath(item: item, section: 0)
 			let photoHeight = delegate.collectionView(collectionView,
